@@ -27,7 +27,7 @@ function App() {
   return (
       <div
           style={{
-              width:414,
+              width:520,
               textAlign:'center',
               margin:'auto',
           }}
