@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './App.css';
-import pokemon from "./pokemon.json";
-const PokemonRow = ({ pokemon }) => (
+import pokemon from './pokemon.json';
+
+const ListLength = 10;
+
+const PokemonRow = ({ pokemon })=>(
     <tr>
         <td>{pokemon.name.english}</td>
         <td>{pokemon.type.join(', ')}</td>
@@ -19,17 +22,18 @@ PokemonRow.propTypes = {
     })
 }
 
+
 function App() {
   return (
       <div
           style={{
-              margin:"auto",
-              width:800,
-              paddingTop:"1rem"
+              width:414,
+              textAlign:'center',
+              margin:'auto',
           }}
       >
-        <h1 className="title">Pokemon Search</h1>
-          <table width="100%">
+          <h1 className="h1">Pokemon Search</h1>
+          <table>
               <thead>
               <tr>
                   <th>Name</th>
@@ -37,7 +41,7 @@ function App() {
               </tr>
               </thead>
               <tbody>
-              {pokemon.slice(0,19).map((pokemon)=>(
+              {pokemon.slice(0,ListLength).map((pokemon)=>(
                   <PokemonRow pokemon={pokemon} key={pokemon.id} />
               ))}
               </tbody>
